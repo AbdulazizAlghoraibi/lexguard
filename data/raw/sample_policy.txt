@@ -1,0 +1,11 @@
+Section 1 - Data Retention
+
+The contractor shall retain all audit logs for a minimum period of 90 days.
+
+Section 2 - Exceptions
+
+Unless otherwise approved in writing by the compliance officer, logs related to financial transactions must be retained for 180 days.
+
+Section 3 - Deletion
+
+All temporary logs may be deleted after 30 days.

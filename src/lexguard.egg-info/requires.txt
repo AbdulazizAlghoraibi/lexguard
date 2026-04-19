@@ -1,0 +1,9 @@
+pydantic
+pymupdf
+pdfplumber
+tqdm
+rank-bm25
+rich
+sentence-transformers
+faiss-cpu
+numpy

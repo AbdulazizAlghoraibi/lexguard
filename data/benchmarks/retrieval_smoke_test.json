@@ -1,0 +1,18 @@
+[
+  {
+    "query": "log retention period",
+    "expected_section": "Data Retention"
+  },
+  {
+    "query": "financial logs retention",
+    "expected_section": "Exceptions"
+  },
+  {
+    "query": "log deletion policy",
+    "expected_section": "Deletion"
+  },
+  {
+    "query": "how long should logs be stored",
+    "expected_section": "Data Retention"
+  }
+]

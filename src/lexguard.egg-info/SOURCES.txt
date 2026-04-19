@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/lexguard/__init__.py
+src/lexguard.egg-info/PKG-INFO
+src/lexguard.egg-info/SOURCES.txt
+src/lexguard.egg-info/dependency_links.txt
+src/lexguard.egg-info/requires.txt
+src/lexguard.egg-info/top_level.txt
+src/lexguard/ingestion/__init__.py
+src/lexguard/ingestion/chunker.py
+src/lexguard/ingestion/pdf_loader.py
+src/lexguard/ingestion/text_loader.py
+src/lexguard/retrieval/bm25.py
+src/lexguard/retrieval/dense.py
+src/lexguard/schemas/__init__.py
+src/lexguard/schemas/document.py
