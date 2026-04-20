@@ -1,4 +1,11 @@
 # lexguard
-An enterprise-grade, air-gapped reasoning system that ingests contracts and policy documents, constructs a legal knowledge graph, and emits structured, citation-gated compliance claims — detecting contradictions and policy gaps with full on-premise data sovereignty.
 
-Current status: ingestion pipeline, section-aware chunking, and retrieval baselines (BM25 / dense / hybrid) are implemented and evaluated on a small smoke-test benchmark.
+A system for ingesting contracts and policy documents and running retrieval over extracted text.
+
+## Current status
+
+- PDF/TXT ingestion
+- Basic chunking
+- BM25 / dense / hybrid retrieval
+- Small benchmark evaluation
+- Initial testing on CUAD
