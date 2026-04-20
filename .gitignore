@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+
+data/external/
+data/raw/cuad/
+data/raw/cuad_PDF/
+data/raw/cuad_pdf/
+data/raw/cuad_txt/
+
+.DS_Store
