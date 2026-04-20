@@ -1,0 +1,11 @@
+Section 1 - Access Control
+
+All employees must authenticate using multi-factor authentication.
+
+Section 2 - Privileged Access
+
+Administrative access must be reviewed every 30 days.
+
+Section 3 - Violations
+
+Unauthorized access attempts may result in account suspension.

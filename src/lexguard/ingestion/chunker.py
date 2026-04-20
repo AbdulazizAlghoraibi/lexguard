@@ -2,12 +2,10 @@ import re
 from typing import List, Optional
 from lexguard.schemas.document import DocumentChunk
 
-
 SECTION_HEADER_PATTERN = re.compile(
     r"^\s*(Section|Article|Clause)\s+(\d+[\.\d]*)\s*[-:\.]?\s*(.*)$",
     re.IGNORECASE
 )
-
 
 def normalize_text(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
@@ -15,11 +13,9 @@ def normalize_text(text: str) -> str:
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
-
 def split_paragraphs(text: str) -> List[str]:
     parts = re.split(r"\n\s*\n", text)
     return [p.strip() for p in parts if p.strip()]
-
 
 def detect_section_header(paragraph: str):
     lines = [line.strip() for line in paragraph.splitlines() if line.strip()]
@@ -38,7 +34,6 @@ def detect_section_header(paragraph: str):
         }
     return None
 
-
 def build_chunks(document_id: str, title: str, pages) -> List[DocumentChunk]:
     chunks: List[DocumentChunk] = []
     current_section_id: Optional[str] = None
@@ -47,8 +42,10 @@ def build_chunks(document_id: str, title: str, pages) -> List[DocumentChunk]:
     for page in pages:
         normalized = normalize_text(page["text"])
         paragraphs = split_paragraphs(normalized)
+        
+        clause_counter = 0
 
-        for i, para in enumerate(paragraphs):
+        for para in paragraphs:
             header_info = detect_section_header(para)
 
             if header_info:
@@ -59,6 +56,7 @@ def build_chunks(document_id: str, title: str, pages) -> List[DocumentChunk]:
                 body = "\n".join(lines[1:]).strip()
 
                 if not body:
+                    
                     continue
 
                 chunk_text = body
@@ -73,11 +71,13 @@ def build_chunks(document_id: str, title: str, pages) -> List[DocumentChunk]:
                     page_number=page["page_number"],
                     section_id=current_section_id,
                     section_title=current_section_title,
-                    clause_id=f"{page['page_number']}_{i}",
+                    clause_id=f"{page['page_number']}_{clause_counter}",
                     chunk_text=chunk_text,
                     char_start=0,
                     char_end=len(chunk_text),
                 )
             )
+            
+            clause_counter += 1
 
     return chunks

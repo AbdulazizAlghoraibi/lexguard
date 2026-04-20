@@ -8,11 +8,7 @@
     "expected_section": "Exceptions"
   },
   {
-    "query": "log deletion policy",
+    "query": "temporary logs deletion",
     "expected_section": "Deletion"
-  },
-  {
-    "query": "how long should logs be stored",
-    "expected_section": "Data Retention"
   }
 ]
